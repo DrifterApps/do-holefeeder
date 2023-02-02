@@ -1,0 +1,39 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: portainer-ingress
+  namespace: portainer
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:
+  rules:
+    - host: portainer.${domain}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: portainer
+                port:
+                  name: http
+  tls:
+    - hosts:
+      - portainer.${domain}
+      secretName: portainer.${domain}-tls
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: portainer.${domain}
+  namespace: portainer
+spec:
+  secretName: portainer.${domain}-tls
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: portainer.${domain}
+  dnsNames:
+  - portainer.${domain}
