@@ -43,4 +43,3 @@ vagrant/local_config.yaml
 # Terraform plan files
 *.tfplan
 k3s-common/templates/portainer-config copy.tftpl
-.terraform.lock.hcl
