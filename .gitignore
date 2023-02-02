@@ -13,6 +13,7 @@ crash.log
 # version control.
 #
 # example.tfvars
+terraform.tfvars
 
 # Ignore override files as they are usually used to override resources locally and so
 # are not checked in
@@ -27,3 +28,18 @@ override.tf.json
 
 # Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
 # example: *tfplan*
+
+# known files created by terraform modules
+id_rsa*
+kube_config*
+
+# vagrant files
+.vagrant/
+vagrant/local_config.yaml
+
+# MacOS junk
+.DS_Store
+
+# Terraform plan files
+*.tfplan
+k3s-common/templates/portainer-config copy.tftpl

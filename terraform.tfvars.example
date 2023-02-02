@@ -1,0 +1,33 @@
+# Required variables
+# - Fill in before beginning quickstart
+# ==========================================================
+
+# DigitalOcean API token
+do_token = ""
+
+# Password used to log in to the `admin` account on the new k3s server
+k3s_server_admin_password = ""
+
+
+# Optional variables
+# - Uncomment variables to customize quickstart
+# ----------------------------------------------------------
+
+# DigitalOcean region for all resources
+# do_region = ""
+
+# Prefix for all resources created by quickstart
+# prefix = ""
+
+# Size of all created droplets
+# droplet_size = ""
+
+# Kubernetes version used for creating management server cluster
+# - Must be supported by RKE terraform provider 1.0.1
+# k3s_kubernetes_version = ""
+
+# Version of cert-manager to install, used in case of older k3s versions
+# cert_manager_version = ""
+
+# Version of k3s to install
+# k3s_version = ""
